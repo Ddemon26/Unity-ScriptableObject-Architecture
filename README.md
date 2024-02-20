@@ -7,6 +7,7 @@ This is built from the Unite 2017 Austin Conference by @roboryantron, Ryan Hippl
 ```
 https://github.com/Ddemon26/Unity-ScriptableObject-Architecture.git
 ```
+Wiki: https://ddemon26.github.io/Unity-ScriptableObject-Architecture/
 
 ## Scriptable Architect Variables
 
