@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "displayName": "Scriptable Object Architecture",
   "description": "A Unity package for implementing a Scriptable Object architecture.",
-  "unity": "2023.3.0a17",
+  "unity": "2023.3",
   "author": {
     "name": "Damon Fedorick",
     "email": "Hello123@example.com",
