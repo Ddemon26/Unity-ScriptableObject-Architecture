@@ -37,6 +37,9 @@ This project includes custom property drawers and editors to enhance the usabili
 Here's an example of how to use the FloatVariable in a Unity script:
 
 ```csharp
+using ScriptableArchitect.variables;
+using UnityEngine;
+
 public class PlayerMovement : MonoBehaviour
 {
     public FloatReference moveSpeed;
@@ -61,6 +64,11 @@ This architecture includes a system for event channels that allows for decoupled
 - **IntEventChannel & IntEventListener**: Specialized event channel and listener for events carrying an `int` payload.
 
 Event channels provide a flexible way to send notifications or data across different parts of your project without requiring a direct reference between the sender and the receiver.
+
+### Example Usage
+
+Here's an example of how to use the EventChannel in a Unity script:
+
 ```csharp
 using ScriptableArchitect.Events;
 using UnityEngine;
@@ -111,3 +119,40 @@ This architecture includes an `InputReader` class that handles player input usin
 - **PlayerInput**: A generated class from the Input System that defines the input actions and bindings.
 
 Example usage of `InputReader` allows for decoupled input handling, making it easier to manage and update input logic separately from game logic.
+
+
+```csharp
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public InputReader inputReader;
+
+    private void OnEnable()
+    {
+        inputReader.Move += OnMove;
+        inputReader.Jump += OnJump;
+    }
+
+    private void OnDisable()
+    {
+        inputReader.Move -= OnMove;
+        inputReader.Jump -= OnJump;
+    }
+
+    private void OnMove(Vector2 direction)
+    {
+        // Move the player based on the input direction
+        transform.Translate(new Vector3(direction.x, 0, direction.y) * Time.deltaTime);
+    }
+
+    private void OnJump(bool isJumping)
+    {
+        if (isJumping)
+        {
+            // Perform jump logic
+            Debug.Log("Player is jumping");
+        }
+    }
+}
+```
