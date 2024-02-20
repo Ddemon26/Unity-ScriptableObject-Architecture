@@ -62,7 +62,9 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 ```
-### Event Channels
+***
+
+## Event Channels
 
 This architecture includes a system for event channels that allows for decoupled communication between different parts of your game. Event channels are defined for different data types, enabling the broadcasting and listening of events with specific payloads.
 
@@ -117,11 +119,12 @@ public class FloatEventListener : MonoBehaviour
     }
 }
 ```
-***
+
 In this example, `ExampleUsage` is a class that can trigger a float event through the `floatEventChannel`. The `FloatEventListener` class listens for the event and executes the `OnFloatEvent` method when the event is triggered.
+
 ***
 
-### Input Handling
+## Input Handling
 
 This architecture includes an `InputReader` class that handles player input using the Unity Input System. It provides events for various actions like moving, rotating, jumping, running, and more. Other scripts can subscribe to these events to react to player input.
 
@@ -130,6 +133,9 @@ This architecture includes an `InputReader` class that handles player input usin
 
 Example usage of `InputReader` allows for decoupled input handling, making it easier to manage and update input logic separately from game logic.
 
+***
+
+### Example Usage
 
 ```csharp
 using UnityEngine;
@@ -166,3 +172,6 @@ public class PlayerController : MonoBehaviour
     }
 }
 ```
+
+
+***
