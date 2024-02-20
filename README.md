@@ -11,6 +11,12 @@ This is built from the Unite 2017 Austin Conference by @roboryantron, Ryan Hippl
 * [Event Channels](#event-channels)
 * [Input Handling](#input-handling)
 
+## GitHub URL Link
+
+```
+https://github.com/Ddemon26/Unity-ScriptableObject-Architecture.git
+```
+
 ## Scriptable Architect Variables
 
 This repository contains a collection of ScriptableObject variables for Unity. These variables can be used to create a more modular and scalable architecture in your Unity projects.
