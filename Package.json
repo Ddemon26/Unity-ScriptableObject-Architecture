@@ -1,0 +1,17 @@
+{
+  "name": "com.damon.scriptableobjectarchitecture",
+  "version": "1.0.0",
+  "displayName": "Scriptable Object Architecture",
+  "description": "A Unity package for implementing a Scriptable Object architecture.",
+  "unity": "2019.4",
+  "author": {
+    "name": "Damon Fedorick",
+    "email": "Hello123@example.com",
+    "url": "https://www.youtube.com/channel/UC1d77tqiXVMMmqpsAs2ojKg"
+  },
+  "keywords": ["unity", "scriptableobject", "architecture"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ddemon26/Unity-s-Scriptable-Object-Architecture.git"
+  }
+}
