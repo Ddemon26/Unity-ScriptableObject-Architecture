@@ -51,3 +51,54 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 ```
+### Event Channels
+
+This architecture includes a system for event channels that allows for decoupled communication between different parts of your game. Event channels are defined for different data types, enabling the broadcasting and listening of events with specific payloads.
+
+- **EventChannel**: An abstract class for creating event channels that can handle events of a specific type.
+- **EventListener**: A component that listens for events on a specific event channel and invokes a response when an event is broadcasted.
+- **FloatEventChannel & FloatEventListener**: Specialized event channel and listener for events carrying a `float` payload.
+- **IntEventChannel & IntEventListener**: Specialized event channel and listener for events carrying an `int` payload.
+
+Event channels provide a flexible way to send notifications or data across different parts of your project without requiring a direct reference between the sender and the receiver.
+```csharp
+using ScriptableArchitect.Events;
+using UnityEngine;
+
+public class ExampleUsage : MonoBehaviour
+{
+    // Reference to the event channel asset
+    public EventChannel<float> floatEventChannel;
+
+    // Method to invoke the event
+    public void TriggerFloatEvent(float value)
+    {
+        floatEventChannel.Invoke(value);
+    }
+}
+
+// Listener component that responds to the event
+public class FloatEventListener : MonoBehaviour
+{
+    public EventListener<float> listener;
+
+    private void OnEnable()
+    {
+        listener.Register();
+    }
+
+    private void OnDisable()
+    {
+        listener.Deregister();
+    }
+
+    // This method will be called when the event is invoked
+    public void OnFloatEvent(float value)
+    {
+        Debug.Log($"Received float event with value: {value}");
+    }
+}
+```
+***
+In this example, `ExampleUsage` is a class that can trigger a float event through the `floatEventChannel`. The `FloatEventListener` class listens for the event and executes the `OnFloatEvent` method when the event is triggered.
+***
