@@ -17,8 +17,6 @@ This is built from the Unite 2017 Austin Conference by @roboryantron, Ryan Hippl
 https://github.com/Ddemon26/Unity-ScriptableObject-Architecture.git
 ```
 
-![image](https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/assets/95268795/e364c4f3-d6ad-4c7d-b9ab-6c60152f343f)
-
 ## Scriptable Architect Variables
 
 This repository contains a collection of ScriptableObject variables for Unity. These variables can be used to create a more modular and scalable architecture in your Unity projects.
