@@ -4,8 +4,8 @@
   "description": "A Unity package for implementing a Scriptable Object architecture.",
   "version": "1.0.0",
   "keywords": [
-    "unity", 
-    "scriptableobject", 
+    "unity",
+    "scriptableobject",
     "architecture"
   ],
   "category": "Unity ScriptableObject Architecture",
@@ -14,5 +14,9 @@
     "name": "Ddemon26",
     "url": "https://github.com/Ddemon26"
   },
-   "documentationUrl": "https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/README.md"
+  "license": "MIT",
+  "documentationUrl": "https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/README.md",
+  "files": [
+    "**/*"
+  ]
 }
