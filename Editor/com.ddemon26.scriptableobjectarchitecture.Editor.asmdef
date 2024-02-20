@@ -1,0 +1,20 @@
+{
+    "name": "com.ddemon26.scriptableobjectarchitecture.Editor",
+    "rootNamespace": "ScriptableArchitect",
+    "references": [
+        "GUID:35b481135aa9a6c45a23631fd8db6537"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
