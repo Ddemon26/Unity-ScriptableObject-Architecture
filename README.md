@@ -6,6 +6,8 @@ This is built from the Unite 2017 Austin Conference by @roboryantron, Ryan Hippl
 
 This repository contains a collection of ScriptableObject variables for Unity. These variables can be used to create a more modular and scalable architecture in your Unity projects.
 
+***
+
 ### Features
 
 - **BoolVariable**: A boolean variable that can be toggled, set to true or false, or set based on another BoolVariable.
@@ -19,11 +21,15 @@ This repository contains a collection of ScriptableObject variables for Unity. T
 
 Each variable type includes a corresponding reference type (e.g., BoolReference, FloatReference, StringReference, Vector3Reference) that allows for dynamic referencing between local and ScriptableObject values.
 
+***
+
 ### Usage
 
 1. Create a new ScriptableObject variable by right-clicking in the Project window, navigating to the "Variables" menu, and selecting the desired variable type.
 2. Set the variable's value in the Inspector or through scripts.
 3. Reference the variable in your scripts using the appropriate reference type.
+
+***
 
 ### Custom Property Drawers and Editors
 
@@ -31,6 +37,8 @@ This project includes custom property drawers and editors to enhance the usabili
 
 - **ReferenceDrawer**: A custom property drawer for FloatReference that provides a convenient way to choose between using a constant value or a reference to a FloatVariable.
 - **VariableEditor**: A custom editor for FloatVariable that adds a slider in the inspector when the UseMinMaxSlider option is enabled, allowing for easy value adjustments within the specified range.
+
+***
 
 ### Example Usage
 
@@ -64,6 +72,8 @@ This architecture includes a system for event channels that allows for decoupled
 - **IntEventChannel & IntEventListener**: Specialized event channel and listener for events carrying an `int` payload.
 
 Event channels provide a flexible way to send notifications or data across different parts of your project without requiring a direct reference between the sender and the receiver.
+
+***
 
 ### Example Usage
 
