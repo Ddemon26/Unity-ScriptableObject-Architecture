@@ -102,3 +102,12 @@ public class FloatEventListener : MonoBehaviour
 ***
 In this example, `ExampleUsage` is a class that can trigger a float event through the `floatEventChannel`. The `FloatEventListener` class listens for the event and executes the `OnFloatEvent` method when the event is triggered.
 ***
+
+### Input Handling
+
+This architecture includes an `InputReader` class that handles player input using the Unity Input System. It provides events for various actions like moving, rotating, jumping, running, and more. Other scripts can subscribe to these events to react to player input.
+
+- **InputReader**: A `ScriptableObject` that reads player input and raises events for different actions.
+- **PlayerInput**: A generated class from the Input System that defines the input actions and bindings.
+
+Example usage of `InputReader` allows for decoupled input handling, making it easier to manage and update input logic separately from game logic.
