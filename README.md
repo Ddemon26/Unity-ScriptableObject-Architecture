@@ -2,12 +2,6 @@
 
 This is built from the Unite 2017 Austin Conference by @roboryantron, Ryan Hipple.
 
-## Git-URL
-
-```
-https://github.com/Ddemon26/Unity-ScriptableObject-Architecture.git
-```
-
 ## Navigation
 
 * [Home](#unity-scriptable-object-architecture)
