@@ -12,15 +12,12 @@ This repository contains a collection of ScriptableObject variables for Unity. T
 - **FloatVariable**: A float variable with optional min-max clamping. It can be set directly, from another FloatVariable, or incremented by a specified amount.
 - **StringVariable**: A simple string variable that can be set or retrieved.
 - **Vector3Variable**: A Vector3 variable that can be set directly or from another Vector3Variable.
+- **AudioClipListVariable**: A variable to reference an array of AudioClips.
+- **AudioClipVariable**: A variable to reference an AudioClip.
+- **ColorVariable**: A variable to reference a color.
+- **Vector2Variable**: A variable to reference a Vector2.
 
-Each variable type also includes a corresponding reference type (e.g., BoolReference, FloatReference) that allows for dynamic referencing between local and ScriptableObject values.
-
-### Reference Types
-
-- **BoolReference**: Represents a reference to a Boolean value, which can either be a constant or a variable.
-- **FloatReference**: Used to reference a float value, which can be either a constant or a variable.
-- **StringReference**: Represents a reference to a string that can be either a constant or a variable.
-- **Vector3Reference**: Represents a reference to a Vector3 that can be either a constant or a variable.
+Each variable type includes a corresponding reference type (e.g., BoolReference, FloatReference, StringReference, Vector3Reference) that allows for dynamic referencing between local and ScriptableObject values.
 
 ### Usage
 
@@ -54,4 +51,3 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 ```
-
