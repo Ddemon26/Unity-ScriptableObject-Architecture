@@ -9,6 +9,15 @@ https://github.com/Ddemon26/Unity-ScriptableObject-Architecture.git
 ```
 Wiki: https://ddemon26.github.io/Unity-ScriptableObject-Architecture/
 
+## Navigation
+
+* [Home](#unity-scriptable-object-architecture)
+* [Features](#features)
+* [Usage](#usage)
+* [Example Usage](#example-usage)
+* [Event Channels](#event-channels)
+* [Input Handling](#input-handling)
+
 ## Scriptable Architect Variables
 
 This repository contains a collection of ScriptableObject variables for Unity. These variables can be used to create a more modular and scalable architecture in your Unity projects.
