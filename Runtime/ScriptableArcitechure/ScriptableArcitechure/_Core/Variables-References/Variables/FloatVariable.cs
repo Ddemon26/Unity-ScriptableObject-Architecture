@@ -5,7 +5,7 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class represents a float variable that can be created as a ScriptableObject.
     /// </summary>
-    [CreateAssetMenu(menuName = "Variables/FloatVariable")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Variables/FloatVariable")]
     public class FloatVariable : ScriptableObject
     {
 #if UNITY_EDITOR
@@ -19,17 +19,20 @@ namespace ScriptableArchitect.Variables
         /// </summary>
         [Tooltip("The value of the float variable.")]
         public float Value;
+
         /// <summary>
         /// Determines whether the value of the float variable will be clamped between the MinValue and MaxValue.
         /// </summary>
         [Tooltip("If true, the value of the float variable will be clamped between the MinValue and MaxValue.")]
         public bool UseMinMaxSlider = false;
+
         /// <summary>
         /// The minimum value of the float variable.
         /// </summary>
         [Tooltip("The minimum value of the float variable.")]
         [ConditionalHide("UseMinMaxSlider", true)]
         public float MinValue = 0;
+
         /// <summary>
         /// The maximum value of the float variable.
         /// </summary>
@@ -47,14 +50,16 @@ namespace ScriptableArchitect.Variables
                 Value = Mathf.Clamp(Value, MinValue, MaxValue);
             }
         }
+
         /// <summary>
-        /// Sets the value of the float variable from a float, clamping it between the MinValue and MaxValue.
+        /// Sets the value of the float variable from a float, clamping it between the MinValue and MaxValue if UseMinMaxSlider is true.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The new value.</param>
         public void SetValueWithClamp(float value)
         {
-            Value = Mathf.Clamp(value, MinValue, MaxValue);
+            Value = UseMinMaxSlider ? Mathf.Clamp(value, MinValue, MaxValue) : value;
         }
+
         /// <summary>
         /// Sets the value of the float variable from a float.
         /// </summary>
@@ -63,6 +68,7 @@ namespace ScriptableArchitect.Variables
         {
             Value = value;
         }
+
         /// <summary>
         /// Sets the value of the float variable from another FloatVariable.
         /// </summary>
@@ -71,6 +77,7 @@ namespace ScriptableArchitect.Variables
         {
             Value = value.Value;
         }
+
         /// <summary>
         /// Increases the value of the float variable by a specified amount.
         /// </summary>
@@ -79,6 +86,7 @@ namespace ScriptableArchitect.Variables
         {
             Value += amount;
         }
+
         /// <summary>
         /// Increases the value of the float variable by the value of another FloatVariable.
         /// </summary>
@@ -87,6 +95,7 @@ namespace ScriptableArchitect.Variables
         {
             Value += amount.Value;
         }
+
         /// <summary>
         /// Sets the value of the float variable from a string.
         /// </summary>

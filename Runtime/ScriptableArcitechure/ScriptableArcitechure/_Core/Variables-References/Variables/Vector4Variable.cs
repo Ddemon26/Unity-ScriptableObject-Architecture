@@ -3,10 +3,10 @@
 namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// This class represents a Vector2 variable that can be created as a ScriptableObject.
+    /// This class represents a Vector4 variable that can be created as a ScriptableObject.
     /// </summary>
-    [CreateAssetMenu(menuName = "ScriptableArchitect/Vectors/Vector2Variable")]
-    public class Vector2Variable : ScriptableObject
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Vectors/Vector4Variable")]
+    public class Vector4Variable : ScriptableObject
     {
 #if UNITY_EDITOR
         /// <summary>
@@ -18,38 +18,42 @@ namespace ScriptableArchitect.Variables
 #endif
 
         /// <summary>
-        /// The value of the Vector2 variable.
+        /// The value of the Vector4 variable.
         /// </summary>
-        public Vector2 Value;
+        public Vector4 Value;
+
         /// <summary>
-        /// Sets the value of the Vector2 variable from a Vector2.
+        /// Sets the value of the Vector4 variable from a Vector4.
         /// </summary>
         /// <param name="value">The new value.</param>
-        public void SetValue(Vector2 value)
+        public void SetValue(Vector4 value)
         {
             Value = value;
         }
+
         /// <summary>
-        /// Sets the value of the Vector2 variable from another Vector2Variable.
+        /// Sets the value of the Vector4 variable from another Vector4Variable.
         /// </summary>
-        /// <param name="value">The Vector2Variable to get the new value from.</param>
-        public void SetValue(Vector2Variable value)
+        /// <param name="value">The Vector4Variable to get the new value from.</param>
+        public void SetValue(Vector4Variable value)
         {
             Value = value.Value;
         }
+
         /// <summary>
-        /// Applies a change to the value of the Vector2 variable.
+        /// Applies a change to the value of the Vector4 variable.
         /// </summary>
         /// <param name="amount">The amount to change the value by.</param>
-        public void ApplyChange(Vector2 amount)
+        public void ApplyChange(Vector4 amount)
         {
             Value += amount;
         }
+
         /// <summary>
-        /// Applies a change to the value of the Vector2 variable from another Vector2Variable.
+        /// Applies a change to the value of the Vector4 variable from another Vector4Variable.
         /// </summary>
-        /// <param name="amount">The Vector2Variable to get the change amount from.</param>
-        public void ApplyChange(Vector2Variable amount)
+        /// <param name="amount">The Vector4Variable to get the change amount from.</param>
+        public void ApplyChange(Vector4Variable amount)
         {
             Value += amount.Value;
         }

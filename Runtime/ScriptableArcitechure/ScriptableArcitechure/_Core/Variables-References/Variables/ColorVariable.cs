@@ -5,7 +5,7 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class represents a color variable that can be created as a ScriptableObject.
     /// </summary>
-    [CreateAssetMenu(menuName = "Variables/ColorVariable")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Material/ColorVariable")]
     public class ColorVariable : ScriptableObject
     {
 #if UNITY_EDITOR
