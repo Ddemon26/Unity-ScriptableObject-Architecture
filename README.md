@@ -54,7 +54,10 @@ Each variable type includes a corresponding reference type (e.g., BoolReference,
 This project includes custom property drawers and editors to enhance the usability of the ScriptableObject variables in the Unity Editor.
 
 - **ReferenceDrawer**: A custom property drawer for FloatReference that provides a convenient way to choose between using a constant value or a reference to a FloatVariable.
+- ![GifReference](https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/assets/95268795/71e3c096-a90d-45fa-be94-f994681396d8)
 - **VariableEditor**: A custom editor for FloatVariable that adds a slider in the inspector when the UseMinMaxSlider option is enabled, allowing for easy value adjustments within the specified range.
+- ![GifVariable](https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/assets/95268795/8beb9f19-a628-4e8a-b388-33e4bf7df835)
+
 
 ***
 
