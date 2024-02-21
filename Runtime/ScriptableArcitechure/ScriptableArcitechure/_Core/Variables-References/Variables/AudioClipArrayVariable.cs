@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace ScriptableArchitect.Variables
 {
@@ -6,7 +6,7 @@ namespace ScriptableArchitect.Variables
     /// This class is used to reference an array of AudioClips, which can be either a constant or a variable.
     /// </summary>
     [CreateAssetMenu(menuName = "Variables/AudioClipListVariable")]
-    public class AudioClipListVariable : ScriptableObject
+    public class AudioClipArrayVariable : ScriptableObject
     {
 #if UNITY_EDITOR
         [Multiline]
@@ -33,7 +33,7 @@ namespace ScriptableArchitect.Variables
         /// Sets the value of the AudioClipListVariable to the value of another AudioClipListVariable.
         /// </summary>
         /// <param name="value"></param>
-        public void SetValue(AudioClipListVariable value)
+        public void SetValue(AudioClipArrayVariable value)
         {
             Value = value.Value;
         }
