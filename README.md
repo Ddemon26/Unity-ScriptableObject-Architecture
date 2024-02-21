@@ -41,6 +41,10 @@ Each variable type includes a corresponding reference type (e.g., BoolReference,
 
 ***
 
+![image-1 png](https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/assets/95268795/4b2fa58c-b7ca-4504-8288-e7705fd8bd15)
+
+***
+
 ### Usage
 
 1. Create a new ScriptableObject variable by right-clicking in the Project window, navigating to the "Variables" menu, and selecting the desired variable type.
