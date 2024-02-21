@@ -5,7 +5,7 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class represents a Vector3 variable that can be created as a ScriptableObject.
     /// </summary>
-    [CreateAssetMenu(menuName = "Variables/Vector3Variable")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Vectors/Vector3Variable")]
     public class Vector3Variable : ScriptableObject
     {
 #if UNITY_EDITOR

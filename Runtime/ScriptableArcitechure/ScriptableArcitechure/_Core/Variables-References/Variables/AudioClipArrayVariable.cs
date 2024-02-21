@@ -5,7 +5,7 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class is used to reference an array of AudioClips, which can be either a constant or a variable.
     /// </summary>
-    [CreateAssetMenu(menuName = "Variables/AudioClipListVariable")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Audio/AudioClipArrayVariable")]
     public class AudioClipArrayVariable : ScriptableObject
     {
 #if UNITY_EDITOR

@@ -47,6 +47,6 @@ namespace ScriptableArchitect.Events
     /// <summary>
     /// Class for an event channel that can handle empty events.
     /// </summary>
-    [CreateAssetMenu(menuName = "Events/EventChannel")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Events/EventChannel")]
     public class EventChannel : EventChannel<Empty> { }
 }

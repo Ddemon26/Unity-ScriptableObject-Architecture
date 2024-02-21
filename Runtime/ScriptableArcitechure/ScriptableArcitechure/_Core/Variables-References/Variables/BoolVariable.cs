@@ -5,7 +5,7 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class represents a boolean variable that can be created as a ScriptableObject.
     /// </summary>
-    [CreateAssetMenu(menuName = "Variables/BoolVariable")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Variables/BoolVariable")]
     public class BoolVariable : ScriptableObject
     {
 #if UNITY_EDITOR

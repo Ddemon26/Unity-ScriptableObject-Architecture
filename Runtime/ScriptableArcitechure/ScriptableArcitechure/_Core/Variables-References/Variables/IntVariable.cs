@@ -5,7 +5,7 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class represents an int variable that can be created as a ScriptableObject.
     /// </summary>
-    [CreateAssetMenu(menuName = "Variables/IntVariable")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Variables/IntVariable")]
     public class IntVariable : ScriptableObject
     {
 #if UNITY_EDITOR

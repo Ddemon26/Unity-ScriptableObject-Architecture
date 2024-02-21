@@ -2,7 +2,7 @@
 
 namespace ScriptableArchitect.Variables
 {
-    [CreateAssetMenu(menuName = "Variables/StringVariable")]
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Variables/StringVariable")]
     public class StringVariable : ScriptableObject
     {
 #if UNITY_EDITOR
