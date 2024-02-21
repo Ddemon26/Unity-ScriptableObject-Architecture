@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableArchitect.Variables
 {
-    [Serializable]
+    [System.Serializable]
     public class Vector3Reference
     {
         public bool UseConstant = true;
