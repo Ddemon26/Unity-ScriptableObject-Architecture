@@ -13,11 +13,13 @@ namespace ScriptableArchitect.Variables
         /// <summary>
         /// The Slider component whose value will be set.
         /// </summary>
+        [Tooltip("The Slider component whose value will be set.")]
         [SerializeField] Slider Slider;
 
         /// <summary>
         /// The FloatVariable whose value will be used to set the Slider's value.
         /// </summary>
+        [Tooltip("The FloatVariable whose value will be used to set the Slider's value.")]
         [SerializeField] FloatVariable Variable;
 
         /// <summary>
