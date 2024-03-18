@@ -9,7 +9,6 @@ This is built from the Unite 2017 Austin Conference by @roboryantron, Ryan Hippl
 * [Usage](#usage)
 * [Example Usage](#example-usage)
 * [Event Channels](#event-channels)
-* [Input Handling](#input-handling)
 
 ## GitHub URL Link
 ***
@@ -148,53 +147,6 @@ public class FloatEventListener : MonoBehaviour
 In this example, `ExampleUsage` is a class that can trigger a float event through the `floatEventChannel`. The `FloatEventListener` class listens for the event and executes the `OnFloatEvent` method when the event is triggered.
 
 ***
-
-## Input Handling
-
-This architecture includes an `InputReader` class that handles player input using the Unity Input System. It provides events for various actions like moving, rotating, jumping, running, and more. Other scripts can subscribe to these events to react to player input.
-
-- **InputReader**: A `ScriptableObject` that reads player input and raises events for different actions.
-- **PlayerInput**: A generated class from the Input System that defines the input actions and bindings.
-
-Example usage of `InputReader` allows for decoupled input handling, making it easier to manage and update input logic separately from game logic.
-
-***
-
-### Example Usage
-
-```csharp
-using UnityEngine;
-
-public class PlayerController : MonoBehaviour
-{
-    public InputReader inputReader;
-
-    private void OnEnable()
-    {
-        inputReader.Move += OnMove;
-        inputReader.Jump += OnJump;
-    }
-
-    private void OnDisable()
-    {
-        inputReader.Move -= OnMove;
-        inputReader.Jump -= OnJump;
-    }
-
-    private void OnMove(Vector2 direction)
-    {
-        // Move the player based on the input direction
-        transform.Translate(new Vector3(direction.x, 0, direction.y) * Time.deltaTime);
-    }
-
-    private void OnJump(bool isJumping)
-    {
-        if (isJumping)
-        {
-            // Perform jump logic
-            Debug.Log("Player is jumping");
-        }
-    }
 }
 ```
 
