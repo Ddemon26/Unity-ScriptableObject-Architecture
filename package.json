@@ -18,6 +18,5 @@
   "licensesUrl": "https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/blob/main/LICENSE.md",
   "documentationUrl": "https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/blob/main/README.md",
   "dependencies": {
-    "com.unity.inputsystem": "1.8.1"
   }
 }
