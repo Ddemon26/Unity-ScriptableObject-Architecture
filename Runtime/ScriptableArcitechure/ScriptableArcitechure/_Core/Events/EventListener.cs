@@ -50,6 +50,8 @@ namespace ScriptableArchitect.Events
     /// <summary>
     /// Class for an event listener that can handle empty events.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Events/Event Listener")]
+    [HelpURL("https://www.youtube.com/watch?v=h8ZAOWY_5LA&t=976s")]
     [Tooltip("Class for an event listener that can handle empty events.")]
     public class EventListener : EventListener<Empty> { }
 }

@@ -6,6 +6,9 @@ namespace ScriptableArchitect.Variables
     /// Takes a FloatVariable and sends its value to an Animator parameter 
     /// every frame on Update.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Variables/AnimatorSetters/Animator Parameter Setter")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
+    [RequireComponent(typeof(Animator))]
     public class AnimatorParameterSetter : MonoBehaviour
     {
         /// <summary>
@@ -32,12 +35,16 @@ namespace ScriptableArchitect.Variables
         [Tooltip("Animator Hash of ParameterName, automatically generated.")]
         [SerializeField] private int parameterHash;
 
+        private float lastValue = 0;
+
         /// <summary>
         /// OnValidate is called when the script is loaded or a value is changed in the Inspector.
         /// It sets the parameterHash to the hash of the ParameterName.
         /// </summary>
         private void OnValidate()
         {
+            if (Animator == null)
+                Animator = GetComponent<Animator>();
             parameterHash = Animator.StringToHash(ParameterName);
         }
 
@@ -47,7 +54,11 @@ namespace ScriptableArchitect.Variables
         /// </summary>
         private void Update()
         {
-            Animator.SetFloat(parameterHash, Variable.Value);
+            if (Variable.Value != lastValue)
+            {
+                Animator.SetFloat(parameterHash, Variable.Value);
+                lastValue = Variable.Value;
+            }
         }
     }
 }

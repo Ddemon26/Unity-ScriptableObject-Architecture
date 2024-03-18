@@ -5,6 +5,8 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class is used to trigger an audio source when a float variable's value falls below a certain threshold.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Variables/AudioSetters/Variable Audio Trigger")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
     public class VariableAudioTrigger : MonoBehaviour
     {
         /// <summary>
@@ -25,6 +27,8 @@ namespace ScriptableArchitect.Variables
         [Tooltip("The threshold below which the AudioSource will be triggered.")]
         public FloatReference LowThreshold;
 
+        private bool isPlaying;
+
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
         /// If the value of the FloatVariable is below the LowThreshold, it plays the AudioSource if it is not already playing.
@@ -34,13 +38,19 @@ namespace ScriptableArchitect.Variables
         {
             if (Variable.Value < LowThreshold)
             {
-                if (!AudioSource.isPlaying)
+                if (!isPlaying)
+                {
                     AudioSource.Play();
+                    isPlaying = true;
+                }
             }
             else
             {
-                if (AudioSource.isPlaying)
+                if (isPlaying)
+                {
                     AudioSource.Stop();
+                    isPlaying = false;
+                }
             }
         }
     }

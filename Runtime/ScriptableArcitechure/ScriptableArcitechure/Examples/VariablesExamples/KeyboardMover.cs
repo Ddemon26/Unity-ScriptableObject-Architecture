@@ -6,6 +6,8 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class is used to move a game object using keyboard input.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Legacy/Input/Keyboard Mover")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
     public class KeyboardMover : MonoBehaviour
     {
         /// <summary>

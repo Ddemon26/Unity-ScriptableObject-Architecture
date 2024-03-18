@@ -5,6 +5,8 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class represents a simple unit with health points in the game.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Variables/Examples/Simple Unit Health")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
     public class SimpleUnitHealth : MonoBehaviour
     {
         /// <summary>
