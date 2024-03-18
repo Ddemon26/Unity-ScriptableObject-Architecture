@@ -6,7 +6,8 @@
   "keywords": [
     "unity",
     "scriptableobject",
-    "architecture"
+    "architecture",
+    "resources"
   ],
   "category": "Unity ScriptableObject Architecture",
   "author": {
