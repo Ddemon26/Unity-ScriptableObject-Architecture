@@ -2,7 +2,7 @@
   "name": "com.ddemon26.scriptableobjectarchitecture",
   "displayName": "Scriptable Object Architecture",
   "description": "A Unity package for implementing a Scriptable Object architecture.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "unity",
     "scriptableobject",
@@ -18,6 +18,6 @@
   "licensesUrl": "https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/blob/main/LICENSE.md",
   "documentationUrl": "https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/blob/main/README.md",
   "dependencies": {
-    "com.unity.inputsystem": "1.8.0-pre.2"
+    "com.unity.inputsystem": "1.8.1"
   }
 }
