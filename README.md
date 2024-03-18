@@ -147,8 +147,3 @@ public class FloatEventListener : MonoBehaviour
 In this example, `ExampleUsage` is a class that can trigger a float event through the `floatEventChannel`. The `FloatEventListener` class listens for the event and executes the `OnFloatEvent` method when the event is triggered.
 
 ***
-}
-```
-
-
-***
