@@ -6,6 +6,8 @@ namespace ScriptableArchitect.Elements
     /// <summary>
     /// This class represents an elemental entity in the game.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Variables/Examples/Elemental")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
     public class Elemental : MonoBehaviour
     {
         /// <summary>
@@ -13,20 +15,23 @@ namespace ScriptableArchitect.Elements
         /// </summary>
         [Tooltip("Element represented by this elemental.")]
         public AttackElement Element;
+
         /// <summary>
         /// The text component to display the name of the element.
         /// </summary>
         [Tooltip("Text to fill in with the element name.")]
         public TMP_Text ComponentLabel;
+
         /// <summary>
         /// This method is called when the script instance is being loaded.
         /// It sets the text of the Label to the name of the Element.
         /// </summary>
         private void OnEnable()
         {
-            if (ComponentLabel != null)
+            if (ComponentLabel != null && Element != null)
                 ComponentLabel.text = Element.name;
         }
+
         /// <summary>
         /// This method is called when the Collider other enters the trigger.
         /// It checks if the other collider also has an Elemental component and if its Element is in the defeated elements of this Elemental's Element.
@@ -35,11 +40,9 @@ namespace ScriptableArchitect.Elements
         /// <param name="other">The other Collider involved in this collision.</param>
         private void OnTriggerEnter(Collider other)
         {
-            Elemental e = other.gameObject.GetComponent<Elemental>();
-            if (e != null)
+            if (other.TryGetComponent(out Elemental e) && e.Element != null && e.Element.DefeatedElements.Contains(Element))
             {
-                if (e.Element.DefeatedElements.Contains(Element))
-                    Destroy(gameObject);
+                Destroy(gameObject);
             }
         }
     }

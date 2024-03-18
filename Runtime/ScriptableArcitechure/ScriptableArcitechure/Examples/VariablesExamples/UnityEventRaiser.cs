@@ -6,6 +6,7 @@ namespace ScriptableArchitect.Variables
     /// <summary>
     /// This class is used to raise a UnityEvent when the game object is enabled.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Legacy/Events/UnityEvent Raiser")]
     public class UnityEventRaiser : MonoBehaviour
     {
         /// <summary>

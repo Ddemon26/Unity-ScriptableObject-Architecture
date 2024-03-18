@@ -7,6 +7,9 @@ namespace ScriptableArchitect.Variables
     /// This class is used to set the value of a Slider component with the value of a FloatVariable.
     /// It executes in both edit and play modes.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Variables/UISetters/SliderSetter")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
+    [RequireComponent(typeof(Slider))]
     [ExecuteInEditMode]
     public class SliderSetter : MonoBehaviour
     {
@@ -22,6 +25,8 @@ namespace ScriptableArchitect.Variables
         [Tooltip("The FloatVariable whose value will be used to set the Slider's value.")]
         [SerializeField] FloatVariable Variable;
 
+        private float lastVariableValue = 0;
+
         /// <summary>
         /// Validates the Slider component.
         /// </summary>
@@ -34,9 +39,12 @@ namespace ScriptableArchitect.Variables
         /// <summary>
         /// Adds a listener to the Slider's onValueChanged event.
         /// </summary>
-        private void Awake()
+        private void OnEnable()
         {
-            Slider.onValueChanged.AddListener(OnValueChange);
+            if (Slider != null)
+            {
+                Slider.onValueChanged.AddListener(OnValueChange);
+            }
         }
 
         /// <summary>
@@ -44,7 +52,10 @@ namespace ScriptableArchitect.Variables
         /// </summary>
         private void OnDisable()
         {
-            Slider.onValueChanged.RemoveListener(OnValueChange);
+            if (Slider != null)
+            {
+                Slider.onValueChanged.RemoveListener(OnValueChange);
+            }
         }
 
         /// <summary>
@@ -53,8 +64,11 @@ namespace ScriptableArchitect.Variables
         /// </summary>
         private void Update()
         {
-            if (Slider != null && Variable != null)
+            if (Slider != null && Variable != null && !Mathf.Approximately(lastVariableValue, Variable.Value))
+            {
                 Slider.value = Variable.Value;
+                lastVariableValue = Variable.Value;
+            }
         }
 
         /// <summary>
@@ -63,7 +77,10 @@ namespace ScriptableArchitect.Variables
         /// <param name="value">The new value of the Slider.</param>
         public void OnValueChange(float value)
         {
-            Variable.SetValueWithClamp(value);
+            if (Variable != null)
+            {
+                Variable.SetValueWithClamp(value);
+            }
         }
     }
 }

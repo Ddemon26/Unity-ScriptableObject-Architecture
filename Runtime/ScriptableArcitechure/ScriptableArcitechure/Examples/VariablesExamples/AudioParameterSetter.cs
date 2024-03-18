@@ -7,6 +7,8 @@ namespace ScriptableArchitect.Variables
     /// Takes a FloatVariable and sends a curve filtered version of its value 
     /// to an exposed audio mixer parameter every frame on Update.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Variables/AudioSetters/Audio Parameter Setter")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
     public class AudioParameterSetter : MonoBehaviour
     {
         /// <summary>
@@ -49,15 +51,29 @@ namespace ScriptableArchitect.Variables
                  "T=1 is when Variable == Max")]
         public AnimationCurve Curve;
 
+        private float lastValue;
+
+        /// <summary>
+        /// Awake is called when the script instance is being loaded.
+        /// </summary>
+        private void Awake()
+        {
+            lastValue = Variable.Value;
+        }
+
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
         /// It calculates a value based on the Variable, Min, Max, and Curve, and sets the ParameterName parameter of the Mixer to this value.
         /// </summary>
         private void Update()
         {
-            float t = Mathf.InverseLerp(Min.Value, Max.Value, Variable.Value);
-            float value = Curve.Evaluate(Mathf.Clamp01(t));
-            Mixer.SetFloat(ParameterName, value);
+            if (Variable.Value != lastValue)
+            {
+                float t = Mathf.InverseLerp(Min.Value, Max.Value, Variable.Value);
+                float value = Curve.Evaluate(Mathf.Clamp01(t));
+                Mixer.SetFloat(ParameterName, value);
+                lastValue = Variable.Value;
+            }
         }
     }
 }

@@ -7,6 +7,9 @@ namespace ScriptableArchitect.Variables
     /// Sets an Image component's fill amount to represent how far Variable is
     /// between Min and Max.
     /// </summary>
+    [AddComponentMenu("Scriptable Architect/Variables/UISetters/ImageFillSetter")]
+    [HelpURL("https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2132s")]
+    [RequireComponent(typeof(Image))]
     public class ImageFillSetter : MonoBehaviour
     {
         /// <summary>
@@ -33,14 +36,27 @@ namespace ScriptableArchitect.Variables
         [Tooltip("Image to set the fill amount on.")]
         public Image Image;
 
+        private float lastVariableValue = 0;
+
+        /// <summary>
+        /// Validates the Image component.
+        /// </summary>
+        void OnValidate()
+        {
+            if (Image == null)
+                Image = GetComponent<Image>();
+        }
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
         /// It sets the fill amount of the Image to represent how far Variable is between Min and Max.
         /// </summary>
         private void Update()
         {
+            if (Mathf.Approximately(lastVariableValue, Variable.Value)) return;
+
             Image.fillAmount = Mathf.Clamp01(
                 Mathf.InverseLerp(Min, Max, Variable));
+            lastVariableValue = Variable.Value;
         }
     }
 }

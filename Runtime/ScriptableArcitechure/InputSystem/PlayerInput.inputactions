@@ -106,9 +106,9 @@
                 },
                 {
                     "name": "ScrollWheel",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "166ec011-3e08-42d3-b306-df2068df4980",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -413,7 +413,7 @@
                 {
                     "name": "",
                     "id": "19d89f96-b105-4a87-8b11-09c2f62b194c",
-                    "path": "<Mouse>/scroll/y",
+                    "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
