@@ -17,13 +17,15 @@ namespace ScriptableArchitect.Variables
         /// The Slider component whose value will be set.
         /// </summary>
         [Tooltip("The Slider component whose value will be set.")]
-        [SerializeField] Slider Slider;
+        [SerializeField]
+        private Slider Slider;
 
         /// <summary>
         /// The FloatVariable whose value will be used to set the Slider's value.
         /// </summary>
         [Tooltip("The FloatVariable whose value will be used to set the Slider's value.")]
-        [SerializeField] FloatVariable Variable;
+        [SerializeField]
+        private FloatReference Variable;
 
         private float lastVariableValue = 0;
 
@@ -64,10 +66,10 @@ namespace ScriptableArchitect.Variables
         /// </summary>
         private void Update()
         {
-            if (Slider != null && Variable != null && !Mathf.Approximately(lastVariableValue, Variable.value))
+            if (Slider != null && Variable != null && !Mathf.Approximately(lastVariableValue, Variable))
             {
-                Slider.value = Variable.value;
-                lastVariableValue = Variable.value;
+                Slider.value = Variable;
+                lastVariableValue = Variable;
             }
         }
 
@@ -79,7 +81,7 @@ namespace ScriptableArchitect.Variables
         {
             if (Variable != null)
             {
-                Variable.SetValue(value);
+                Variable.SetRefValue(value);
             }
         }
     }

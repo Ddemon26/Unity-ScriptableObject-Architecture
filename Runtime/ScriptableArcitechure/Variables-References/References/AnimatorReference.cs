@@ -3,16 +3,20 @@
 namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// This class represents a reference to an Animator that can be either a constant or a variable.
+    /// Represents a reference to an Animator value, which can be stored in an AnimatorVariable asset.
     /// </summary>
     [System.Serializable]
     public class AnimatorReference : ValueReference<Animator, AnimatorVariable>
     {
         /// <summary>
-        /// Initializes a new instance of the AnimatorReference class with default values.
+        /// Default constructor for AnimatorReference.
         /// </summary>
         public AnimatorReference() { }
-        
+
+        /// <summary>
+        /// Constructor that sets the constant Animator value.
+        /// </summary>
+        /// <param name="value">The constant Animator value to set.</param>
         public AnimatorReference(Animator value) : base(value) { }
     }
 }

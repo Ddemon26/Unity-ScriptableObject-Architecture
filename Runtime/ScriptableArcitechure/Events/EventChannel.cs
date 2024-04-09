@@ -12,7 +12,7 @@ namespace ScriptableArchitect.Events
         /// <summary>
         /// A set of observers that are listening for events on this channel.
         /// </summary>
-        readonly HashSet<EventListener<T>> observers = new();
+        private readonly HashSet<EventListener<T>> observers = new();
 
         /// <summary>
         /// Invokes the event on all registered observers.

@@ -41,7 +41,7 @@ namespace ScriptableArchitect.Variables
         /// <summary>
         /// Validates the Image component.
         /// </summary>
-        void OnValidate()
+        private void OnValidate()
         {
             if (Image == null)
                 Image = GetComponent<Image>();

@@ -13,13 +13,15 @@ namespace ScriptableArchitect.Events
         /// The event channel that the listener is subscribed to.
         /// </summary>
         [Tooltip("The event channel that the listener is subscribed to.")]
-        [SerializeField] EventChannel<T> eventChannel;
+        [SerializeField]
+        private EventChannel<T> eventChannel;
 
         /// <summary>
         /// The Unity event to invoke when the event is raised.
         /// </summary>
         [Tooltip("The Unity event to invoke when the event is raised.")]
-        [SerializeField] UnityEvent<T> unityEvent;
+        [SerializeField]
+        private UnityEvent<T> unityEvent;
 
         /// <summary>
         /// Registers the listener with the event channel when the object is awakened.

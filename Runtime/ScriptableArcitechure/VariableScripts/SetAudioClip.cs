@@ -15,25 +15,29 @@ namespace ScriptableArchitect.Sets
         /// The AudioSource to which the AudioClip will be set.
         /// </summary>
         [Tooltip("The AudioSource to which the AudioClip will be set.")]
-        [SerializeField] AudioSource audioSource;
+        [SerializeField]
+        private AudioSource audioSource;
 
         /// <summary>
         /// Reference to the AudioClip to be set.
         /// </summary>
         [Tooltip("Reference to the AudioClip to be set.")]
-        [SerializeField] AudioClipReference audioClipRef;
+        [SerializeField]
+        private AudioClipReference audioClipRef;
 
         /// <summary>
         /// If true, the AudioClip will be set and played on Awake.
         /// </summary>
         [Tooltip("If true, the AudioClip will be set and played on Awake.")]
-        [SerializeField] bool playOnAwake;
+        [SerializeField]
+        private bool playOnAwake;
 
         /// <summary>
         /// If true, the AudioClip will be updated every frame.
         /// </summary>
         [Tooltip("If true, the AudioClip will be updated every frame.")]
-        [SerializeField] bool alwaysUpdate;
+        [SerializeField]
+        private bool alwaysUpdate;
 
         private void OnValidate()
         {

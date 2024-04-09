@@ -27,7 +27,8 @@ namespace ScriptableArchitect.Variables
         /// It is also the TMP_InputField whose text will be updated to match the value of the FloatVariable when the TMP_InputField is not selected.
         /// </remarks>
         [Tooltip("The TMP_InputField that the user will interact with.")]
-        [SerializeField] TMP_InputField InputField;
+        [SerializeField]
+        private TMP_InputField InputField;
 
         /// <summary>
         /// The FloatVariable whose value will be used to set the InputField's text.
@@ -38,7 +39,8 @@ namespace ScriptableArchitect.Variables
         /// When the text of the TMP_InputField is edited, this FloatVariable's value will be set to the parsed value of the new text.
         /// </remarks>
         [Tooltip("The FloatVariable whose value will be used to set the InputField's text.")]
-        [SerializeField] FloatVariable Variable;
+        [SerializeField]
+        private FloatVariable Variable;
 
         [SerializeField] private bool setOnAwake = true;
 

@@ -14,24 +14,27 @@ namespace ScriptableArchitect.Variables
         /// The Animator whose speed is to be controlled.
         /// </summary>
         [Tooltip("The Animator whose speed is to be controlled.")]
-        [SerializeField] Animator Animator;
+        [SerializeField]
+        private Animator Animator;
 
         /// <summary>
         /// The Boolean variable that determines whether the Animator should be stopped or not.
         /// </summary>
         [Tooltip("The Boolean variable that determines whether the Animator should be stopped or not.")]
-        [SerializeField] BoolVariable stopAnimator;
+        [SerializeField]
+        private BoolVariable stopAnimator;
 
         /// <summary>
         /// If set to true, the Animator will be stopped when stopAnimator is false and vice versa.
         /// </summary>
         [Tooltip("If set to true, the Animator will be stopped when stopAnimator is false and vice versa.")]
-        [SerializeField] bool invertSetting;
+        [SerializeField]
+        private bool invertSetting;
 
         /// <summary>
         /// Validates the Animator component.
         /// </summary>
-        void OnValidate()
+        private void OnValidate()
         {
             if (Animator == null)
                 Animator = GetComponent<Animator>();

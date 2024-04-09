@@ -15,19 +15,22 @@ namespace ScriptableArchitect.Sets
         /// The AudioSource whose volume will be set.
         /// </summary>
         [Tooltip("The AudioSource whose volume will be set.")]
-        [SerializeField] AudioSource audioSource;
+        [SerializeField]
+        private AudioSource audioSource;
 
         /// <summary>
         /// Reference to the FloatReference that controls the volume.
         /// </summary>
         [Tooltip("Reference to the FloatReference that controls the volume.")]
-        [SerializeField] FloatReference volumeRef;
+        [SerializeField]
+        private FloatReference volumeRef;
 
         /// <summary>
         /// Multiplier for the volume value.
         /// </summary>
         [Tooltip("Multiplier for the volume value.")]
-        [SerializeField] float volumeMultiplier = 1;
+        [SerializeField]
+        private float volumeMultiplier = 1;
 
         /// <summary>
         /// The last volume value, used to check if the volume has changed.
