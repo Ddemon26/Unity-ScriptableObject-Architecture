@@ -8,12 +8,12 @@ public class IntVariableEditor : Editor
     {
         base.OnInspectorGUI();
 
-        IntVariable script = (IntVariable)target;
+        var script = (IntVariable)target;
 
-        if (script.UseMinMaxSlider)
+        if (script.useMinMaxSlider)
         {
             EditorGUI.BeginChangeCheck();
-            var newValue = EditorGUILayout.IntSlider("Value", script.Value, script.MinValue, script.MaxValue);
+            var newValue = EditorGUILayout.IntSlider("Value", script.Value, script.minValue, script.maxValue);
             if (EditorGUI.EndChangeCheck())
             {
                 script.SetValue(newValue);

@@ -8,12 +8,12 @@ public class FloatVariableEditor : Editor
     {
         base.OnInspectorGUI();
 
-        FloatVariable script = (FloatVariable)target;
+        var script = (FloatVariable)target;
 
-        if (script.UseMinMaxSlider)
+        if (script.useMinMaxSlider)
         {
             EditorGUI.BeginChangeCheck();
-            var newValue = EditorGUILayout.Slider("Value", script.Value, script.MinValue, script.MaxValue);
+            var newValue = EditorGUILayout.Slider("Value", script.value, script.minValue, script.maxValue);
             if (EditorGUI.EndChangeCheck())
             {
                 script.SetValue(newValue);
