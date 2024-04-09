@@ -9,10 +9,10 @@
         
         public void ToggleValue(bool newValue)
         {
-            if (UseConstant)
-                ConstantValue = newValue;
+            if (useConstant)
+                constantValue = newValue;
             else
-                Variable.SetValue(newValue);
+                assetVariable.SetValue(newValue);
         }
     }
 }

@@ -3,37 +3,20 @@
 namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// This class represents a Rect reference that can be used as a variable.
+    /// Represents a reference to a Rect value, which can be stored in a RectVariable asset.
     /// </summary>
     [System.Serializable]
-    public class RectReference
+    public class RectReference : ValueReference<Rect, RectVariable>
     {
-        public bool UseConstant = true;
-        public Rect ConstantValue;
-        public RectVariable Variable;
+        /// <summary>
+        /// Default constructor for RectReference.
+        /// </summary>
+        public RectReference() { }
 
-        public RectReference()
-        { }
-        public RectReference(Rect value)
-        {
-            UseConstant = true;
-            ConstantValue = value;
-        }
-        public Rect Value
-        {
-            get { return UseConstant ? ConstantValue : Variable.value; }
-        }
-        public void SetRefValue(Rect value)
-        {
-            if (UseConstant)
-                ConstantValue = value;
-            else
-                Variable.value = value;
-        }
-
-        public static implicit operator Rect(RectReference reference)
-        {
-            return reference.Value;
-        }
+        /// <summary>
+        /// Constructor that sets the constant Rect value.
+        /// </summary>
+        /// <param name="value">The constant Rect value to set.</param>
+        public RectReference(Rect value) : base(value) { }
     }
 }

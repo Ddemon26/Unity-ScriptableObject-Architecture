@@ -2,56 +2,21 @@
 
 namespace ScriptableArchitect.Variables
 {
+    /// <summary>
+    /// Represents a reference to a Vector3 value, which can be stored in a Vector3Variable asset.
+    /// </summary>
     [System.Serializable]
-    public class Vector3Reference
+    public class Vector3Reference : ValueReference<Vector3, Vector3Variable>
     {
-        public bool UseConstant = true;
-        public Vector3 ConstantValue;
-        public Vector3Variable Variable;
+        /// <summary>
+        /// Default constructor for Vector3Reference.
+        /// </summary>
+        public Vector3Reference() { }
 
         /// <summary>
-        /// initializes a new instance of the Vector3Reference class with default values.
-        /// used to initialize the reference with default values, useful for when you want to use the reference as a Vector3
+        /// Constructor that sets the constant Vector3 value.
         /// </summary>
-        public Vector3Reference()
-        { }
-        /// <summary>
-        /// initializes a new instance of the Vector3Reference class with a given constant value.
-        /// used to initialize the reference with a constant value, useful for when you want to use the reference as a Vector3
-        /// </summary>
-        /// <param name="value"></param>
-        public Vector3Reference(Vector3 value)
-        {
-            UseConstant = true;
-            ConstantValue = value;
-        }
-        /// <summary>
-        /// Gets the value of the reference, which is either the constant value or the variable value, depending on UseConstant. 
-        /// used to get the value of the reference, useful for when you want to use the reference as a Vector3
-        /// </summary>
-        public Vector3 Value
-        {
-            get { return UseConstant ? ConstantValue : Variable.value; }
-        }
-        /// <summary>
-        /// Sets the value of the reference to the given value. If UseConstant is true, the constant value is set. Otherwise, the variable value is set.
-        /// </summary>
-        /// <param name="value"></param>
-        public void SetRefValue(Vector3 value)
-        {
-            if (UseConstant)
-                ConstantValue = value;
-            else
-                Variable.value = value;
-        }
-
-        /// <summary>
-        /// implicit conversion to Vector3. used to convert the reference to a Vector3, useful for when you want to use the reference as a Vector3
-        /// </summary>
-        /// <param name="reference"></param>
-        public static implicit operator Vector3(Vector3Reference reference)
-        {
-            return reference.Value;
-        }
+        /// <param name="value">The constant Vector3 value to set.</param>
+        public Vector3Reference(Vector3 value) : base(value) { }
     }
 }

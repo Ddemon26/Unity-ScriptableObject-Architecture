@@ -1,41 +1,69 @@
 ﻿namespace ScriptableArchitect.Variables
 {
+    /// <summary>
+    /// Abstract class for a reference to a value of type TValue, which can be stored in a ValueAsset of type TAsset.
+    /// </summary>
+    /// <typeparam name="TValue">The type of the value.</typeparam>
+    /// <typeparam name="TAsset">The type of the ValueAsset that can store the value.</typeparam>
     public abstract class ValueReference<TValue, TAsset> where TAsset : ValueAsset<TValue>
     {
-        public bool UseConstant = true;
-        public TValue ConstantValue;
-        public TAsset Variable;
+        /// <summary>
+        /// Determines whether to use the constant value or the variable value.
+        /// </summary>
+        protected readonly bool useConstant = true;
 
-        public ValueReference() { }
+        /// <summary>
+        /// The constant value of type TValue.
+        /// </summary>
+        protected TValue constantValue;
 
-        public ValueReference(TValue value)
+        /// <summary>
+        /// The variable of type TAsset that can store the value.
+        /// </summary>
+        public TAsset assetVariable;
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        protected ValueReference() { }
+
+        /// <summary>
+        /// Constructor that sets the constant value.
+        /// </summary>
+        /// <param name="value">The constant value to set.</param>
+        protected ValueReference(TValue value)
         {
-            UseConstant = true;
-            ConstantValue = value;
+            useConstant = true;
+            constantValue = value;
         }
 
-        public TValue Value
-        {
-            get { return UseConstant ? ConstantValue : Variable.value; }
-        }
+        /// <summary>
+        /// Gets the value, either the constant value or the variable value.
+        /// </summary>
+        public TValue Value => useConstant ? constantValue : assetVariable.value;
 
+        /// <summary>
+        /// Sets the value, either the constant value or the variable value.
+        /// </summary>
+        /// <param name="value">The value to set.</param>
         public void SetRefValue(TValue value)
         {
-            if (UseConstant)
-                ConstantValue = value;
+            if (useConstant)
+                constantValue = value;
             else
-                Variable.value = value;
-        }
-        
-        public TValue GetValue()
-        {
-            return Value;
+                assetVariable.value = value;
         }
 
-        // Implicit conversion operator
-        public static implicit operator TValue(ValueReference<TValue, TAsset> reference)
-        {
-            return reference.Value;
-        }
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <returns>The value, either the constant value or the variable value.</returns>
+        public TValue GetValue() => Value;
+
+        /// <summary>
+        /// Implicit conversion operator from ValueReference to TValue.
+        /// </summary>
+        /// <param name="reference">The ValueReference to convert.</param>
+        public static implicit operator TValue(ValueReference<TValue, TAsset> reference) => reference.Value;
     }
 }

@@ -3,69 +3,20 @@
 namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// This class represents a reference to a ScriptableObject that can be either a constant or a variable.
+    /// Represents a reference to a ScriptableObject value, which can be stored in a ScriptableObjectVariable asset.
     /// </summary>
     [System.Serializable]
-    public class ScriptableObjectReference
+    public class ScriptableObjectReference : ValueReference<ScriptableObject, ScriptableObjectVariable>
     {
         /// <summary>
-        /// Determines whether to use the constant value or the variable value.
+        /// Default constructor for ScriptableObjectReference.
         /// </summary>
-        public bool UseConstant = true;
+        public ScriptableObjectReference() { }
 
         /// <summary>
-        /// The constant value of the ScriptableObject.
+        /// Constructor that sets the constant ScriptableObject value.
         /// </summary>
-        public ScriptableObject ConstantValue;
-
-        /// <summary>
-        /// The variable value of the ScriptableObject.
-        /// </summary>
-        public ScriptableObjectVariable Variable;
-
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public ScriptableObjectReference()
-        { }
-
-        /// <summary>
-        /// Constructor that sets the constant value.
-        /// </summary>
-        /// <param name="value">The constant value.</param>
-        public ScriptableObjectReference(ScriptableObject value)
-        {
-            UseConstant = true;
-            ConstantValue = value;
-        }
-
-        /// <summary>
-        /// The value of the ScriptableObject, which is either the constant value or the variable value.
-        /// </summary>
-        public ScriptableObject Value
-        {
-            get { return UseConstant ? ConstantValue : Variable.value; }
-        }
-
-        /// <summary>
-        /// Sets the value of the ScriptableObject, either as a constant or as a variable.
-        /// </summary>
-        /// <param name="value">The new value.</param>
-        public void SetRefValue(ScriptableObject value)
-        {
-            if (UseConstant)
-                ConstantValue = value;
-            else
-                Variable.SetValue(value);
-        }
-
-        /// <summary>
-        /// Implicit conversion operator from ScriptableObjectReference to ScriptableObject.
-        /// </summary>
-        /// <param name="reference">The ScriptableObjectReference to convert.</param>
-        public static implicit operator ScriptableObject(ScriptableObjectReference reference)
-        {
-            return reference.Value;
-        }
+        /// <param name="value">The constant ScriptableObject value to set.</param>
+        public ScriptableObjectReference(ScriptableObject value) : base(value) { }
     }
 }

@@ -1,32 +1,22 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableArchitect.Variables
 {
-    [Serializable]
-    public class Vector2Reference
+    /// <summary>
+    /// Represents a reference to a Vector2 value, which can be stored in a Vector2Variable asset.
+    /// </summary>
+    [System.Serializable]
+    public class Vector2Reference : ValueReference<Vector2, Vector2Variable>
     {
-        public bool UseConstant = true;
-        public Vector2 ConstantValue;
-        public Vector2Variable Variable;
+        /// <summary>
+        /// Default constructor for Vector2Reference.
+        /// </summary>
+        public Vector2Reference() { }
 
-        public Vector2Reference()
-        { }
-
-        public Vector2Reference(Vector2 value)
-        {
-            UseConstant = true;
-            ConstantValue = value;
-        }
-
-        public Vector2 Value
-        {
-            get { return UseConstant ? ConstantValue : Variable.value; }
-        }
-
-        public static implicit operator Vector2(Vector2Reference reference)
-        {
-            return reference.Value;
-        }
+        /// <summary>
+        /// Constructor that sets the constant Vector2 value.
+        /// </summary>
+        /// <param name="value">The constant Vector2 value to set.</param>
+        public Vector2Reference(Vector2 value) : base(value) { }
     }
 }
