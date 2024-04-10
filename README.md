@@ -13,7 +13,7 @@ This is built from the Unite 2017 Austin Conference by @roboryantron, Ryan Hippl
 ## GitHub URL Link
 ***
 ```
-https://github.com/Ddemon26/Unity-ScriptableObject-Architecture.git
+"com.ddemon26.scriptableobjectarchitecture": https://github.com/Ddemon26/Unity-ScriptableObject-Architecture.git
 ```
 ***
 ![ScriptableObject-](https://github.com/Ddemon26/Unity-ScriptableObject-Architecture/assets/95268795/0540d975-d821-4b5c-be7f-51253df91c4d)
