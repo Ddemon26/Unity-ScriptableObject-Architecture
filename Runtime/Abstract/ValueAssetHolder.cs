@@ -12,39 +12,48 @@ namespace ScriptableArchitect.Variables
     {
         [Header("Primitive Types")] 
         [ToolBelt("Primitive Types", 1)]
+        [SerializeField]
         public List<IntVariable> intVariable = new List<IntVariable>();
+        [SerializeField]
         public List<FloatVariable> floatVariable = new List<FloatVariable>();
+        [SerializeField]
         public List<BoolVariable> boolVariable = new List<BoolVariable>();
+        [SerializeField]
         public List<StringVariable> stringVariable = new List<StringVariable>();
+        [SerializeField]
+        public List<AnimationCurveVariable> animationCurveVariable = new List<AnimationCurveVariable>();
 
         [Header("Vector Types")]
         [ToolBelt("Vector Types", 2)]
+        [SerializeField]
         public List<Vector2Variable> vector2Variable = new List<Vector2Variable>();
+        [SerializeField]
         public List<Vector3Variable> vector3Variable = new List<Vector3Variable>();
-        public List<Vector4Variable> vectorVariable = new List<Vector4Variable>();
-        public List<QuaternionVariable> quaternionVariable = new List<QuaternionVariable>();
+        [SerializeField]
+        public List<Vector4Variable> vector4Variable = new List<Vector4Variable>();
 
         [Header("Graphics")]
         [ToolBelt("Graphics", 3)]
+        [SerializeField]
         public List<ColorVariable> colorVariable = new List<ColorVariable>();
+        [SerializeField]
         public List<SpriteVariable> spriteVariable = new List<SpriteVariable>();
+        [SerializeField]
         public List<MaterialVariable> materialVariable = new List<MaterialVariable>();
+        [SerializeField]
         public List<TextureVariable> textureVariables = new List<TextureVariable>();
         
         [Header("Audio")]
         [ToolBelt("Audio", 4)]
+        [SerializeField]
         public List<AudioClipVariable> audioClipVariable = new List<AudioClipVariable>();
 
         [Header("Game Objects & Components")] 
         [ToolBelt("Game Objects & Components", 5)]
-        public List<PrefabVariable> prefabVariable = new List<PrefabVariable>();
-        public List<AnimationVariable> animationVariable = new List<AnimationVariable>();
-        public List<AnimatorVariable> animatorVariable = new List<AnimatorVariable>();
-        public List<AnimationCurveVariable> animationCurveVariable = new List<AnimationCurveVariable>();
-        public List<LayerMaskVariable> layerMaskVariable = new List<LayerMaskVariable>();
-        public List<RectVariable> rectVariable = new List<RectVariable>();
-        public List<ScriptableObjectVariable> scriptableObjectVariable = new List<ScriptableObjectVariable>();
-
+        [SerializeField]
+        public List<AnimationClipVariable> animationVariable = new List<AnimationClipVariable>();
+        [SerializeField]
+        public List<AnimationControllerVariable> animationControllerVariable = new List<AnimationControllerVariable>();
 
         public void AddVariable<T>(T variable) where T : ScriptableObject
         {

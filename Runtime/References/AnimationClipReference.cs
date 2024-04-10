@@ -34,12 +34,12 @@ namespace ScriptableArchitect.Variables
     /// Represents a reference to an AnimationClip variable, which can be either a constant or a variable.
     /// </summary>
     [System.Serializable]
-    public class AnimationReference : ValueReference<AnimationClip, AnimationVariable>
+    public class AnimationClipReference : ValueReference<AnimationClip, AnimationClipVariable>
     {
         /// <summary>
         /// Default constructor for AnimationReference.
         /// </summary>
-        public AnimationReference()
+        public AnimationClipReference()
         {
         }
 
@@ -48,9 +48,9 @@ namespace ScriptableArchitect.Variables
         /// </summary>
         /// <param name="value">The constant AnimationClip value to set.</param>
         /// <remarks>
-        /// This constructor allows you to create a new instance of <see cref="AnimationReference"/> with a specific value.
+        /// This constructor allows you to create a new instance of <see cref="AnimationClipReference"/> with a specific value.
         /// </remarks>
-        public AnimationReference(AnimationClip value) : base(value)
+        public AnimationClipReference(AnimationClip value) : base(value)
         {
         }
     }

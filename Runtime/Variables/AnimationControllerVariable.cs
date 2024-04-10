@@ -25,22 +25,22 @@
 // SOFTWARE.
 // ----------------------------------------------------------------------------
 
-using ScriptableArchitect.Variables;
-using UnityEditor;
+using UnityEditor.Animations;
+using UnityEngine;
 
 // ReSharper disable once CheckNamespace
-namespace ScriptableArchitect.Editor
+namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// A custom property drawer for LayerMaskReference.
+    /// This class represents an AnimationClip variable that can be created as a ScriptableObject.
+    /// Inherits from the <see cref="ValueAsset{T}"/> class with <see cref="AnimatorController"/> as the type parameter.
     /// </summary>
     /// <remarks>
-    /// This class inherits from the <see cref="ScriptableArchitect.Editor.ReferenceDrawer"/> class and is used to create a custom property drawer for LayerMaskReference.
-    /// The [CustomPropertyDrawer(typeof(LayerMaskReference))] attribute indicates that this drawer is used for LayerMaskReference properties.
+    /// This class is used to create an AnimationClip variable that can be saved as a ScriptableObject in Unity.
+    /// This allows for easy management and reuse of AnimationClip values across different scripts and scenes.
     /// </remarks>
-    /// <seealso cref="ScriptableArchitect.Editor.ReferenceDrawer"/>
-    [CustomPropertyDrawer(typeof(LayerMaskReference))]
-    public class LayerMaskReferenceDrawer : ReferenceDrawer
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Animation/AnimationControllerVariable")]
+    public class AnimationControllerVariable : ValueAsset<AnimatorController>
     {
     }
 }

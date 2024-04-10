@@ -25,22 +25,31 @@
 // SOFTWARE.
 // ----------------------------------------------------------------------------
 
-using ScriptableArchitect.Variables;
-using UnityEditor;
-
 // ReSharper disable once CheckNamespace
-namespace ScriptableArchitect.Editor
+namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// A custom property drawer for RectReference.
+    /// Represents a reference to a NumberedEnum value, which can be stored in a NumberedEnumVariable asset.
     /// </summary>
-    /// <remarks>
-    /// This class inherits from the <see cref="ScriptableArchitect.Editor.ReferenceDrawer"/> class and is used to create a custom property drawer for RectReference.
-    /// The [CustomPropertyDrawer(typeof(RectReference))] attribute indicates that this drawer is used for RectReference properties.
-    /// </remarks>
-    /// <seealso cref="ScriptableArchitect.Editor.ReferenceDrawer"/>
-    [CustomPropertyDrawer(typeof(RectReference))]
-    public class RectReferenceDrawer : ReferenceDrawer
+    [System.Serializable]
+    public class NumberedEnumReference : ValueReference<NumberedEnum, NumberedEnumVariable>
     {
+        /// <summary>
+        /// Default constructor for NumberedEnumReference.
+        /// </summary>
+        public NumberedEnumReference()
+        {
+        }
+
+        /// <summary>
+        /// Constructor that sets the constant NumberedEnum value.
+        /// </summary>
+        /// <param name="value">The constant NumberedEnum value to set.</param>
+        /// <remarks>
+        /// This constructor allows you to create a new instance of <see cref="NumberedEnumReference"/> with a specific value.
+        /// </remarks>
+        public NumberedEnumReference(NumberedEnum value) : base(value)
+        {
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace ScriptableArchitect.Editor
     /// The [CustomPropertyDrawer(typeof(AnimationReference))] attribute indicates that this drawer is used for AnimationReference properties.
     /// </remarks>
     /// <seealso cref="ScriptableArchitect.Editor.ReferenceDrawer"/>
-    [CustomPropertyDrawer(typeof(AnimationReference))]
+    [CustomPropertyDrawer(typeof(AnimationClipReference))]
     public class AnimationReferenceDrawer : ReferenceDrawer
     {
     }

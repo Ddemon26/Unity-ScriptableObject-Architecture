@@ -3,19 +3,19 @@
 // Author: Damon Fedorick
 // Date: 01/01/2024
 // Version: 1.0.1
-// 
+//
 // Copyright (c) 2023 TentCity Software. All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -32,15 +32,13 @@ using UnityEditor;
 namespace ScriptableArchitect.Editor
 {
     /// <summary>
-    /// A custom property drawer for AnimatorReference.
+    /// A custom property drawer for NumberedEnumReference.
     /// </summary>
     /// <remarks>
-    /// This class inherits from the <see cref="ScriptableArchitect.Editor.ReferenceDrawer"/> class and is used to create a custom property drawer for AnimatorReference.
-    /// The [CustomPropertyDrawer(typeof(AnimatorReference))] attribute indicates that this drawer is used for AnimatorReference properties.
+    /// This class inherits from the <see cref="ScriptableArchitect.Editor.ReferenceDrawer"/> class and is used to create a custom property drawer for NumberedEnumReference.
+    /// The [CustomPropertyDrawer(typeof(NumberedEnumReference))] attribute indicates that this drawer is used for NumberedEnumReference properties.
     /// </remarks>
     /// <seealso cref="ScriptableArchitect.Editor.ReferenceDrawer"/>
-    [CustomPropertyDrawer(typeof(AnimatorReference))]
-    public class AnimatorReferenceDrawer : ReferenceDrawer
-    {
-    }
+    [CustomPropertyDrawer(typeof(NumberedEnumReference))]
+    public class NumberedEnumReferenceDrawer : ReferenceDrawer { }
 }

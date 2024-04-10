@@ -24,15 +24,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // ----------------------------------------------------------------------------
-using UnityEngine;
+
+using ScriptableArchitect.Variables;
+using UnityEditor;
+
 // ReSharper disable once CheckNamespace
-namespace ScriptableArchitect.Variables
+namespace ScriptableArchitect.Editor
 {
     /// <summary>
-    /// This class represents an Animation variable that can be created as a ScriptableObject.
+    /// A custom property drawer for AnimatorClipReference.
     /// </summary>
-    [CreateAssetMenu(menuName = "ScriptableArchitect/Animation/AnimationVariable")]
-    public class AnimationVariable : ValueAsset<AnimationClip>
+    /// <remarks>
+    /// This class inherits from the <see cref="ScriptableArchitect.Editor.ReferenceDrawer"/> class and is used to create a custom property drawer for AnimatorClipReference.
+    /// The [CustomPropertyDrawer(typeof(AnimatorClipReference))] attribute indicates that this drawer is used for AnimatorClipReference properties.
+    /// </remarks>
+    /// <seealso cref="ScriptableArchitect.Editor.ReferenceDrawer"/>
+    [CustomPropertyDrawer(typeof(AnimatorControllerReference))]
+    public class AnimationClipReferenceDrawer : ReferenceDrawer
     {
     }
 }

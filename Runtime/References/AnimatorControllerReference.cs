@@ -25,23 +25,35 @@
 // SOFTWARE.
 // ----------------------------------------------------------------------------
 
-using UnityEngine;
+using UnityEditor.Animations;
 
 // ReSharper disable once CheckNamespace
 namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// This class represents a LayerMask variable that can be created as a ScriptableObject.
-    /// Inherits from the <see cref="ValueAsset{T}"/> class with <see cref="LayerMask"/> as the type parameter.
+    /// This class represents an AnimatorController reference that can be created as a ScriptableObject.
+    /// Inherits from the <see cref="ValueReference{T, V}"/> class with <see cref="AnimatorController"/> and <see cref="AnimationControllerVariable"/> as the type parameters.
     /// </summary>
     /// <remarks>
-    /// This class is used to create a LayerMask variable that can be saved as a ScriptableObject in Unity.
-    /// This allows for easy management and reuse of LayerMask values across different scripts and scenes.
+    /// This class is used to create an AnimationClip reference that can be saved as a ScriptableObject in Unity.
+    /// This allows for easy management and reuse of AnimatorController references across different scripts and scenes.
     /// </remarks>
-    [CreateAssetMenu(menuName = "ScriptableArchitect/GameObject/LayerMaskVariable")]
-    public class LayerMaskVariable : ValueAsset<LayerMask>
+    [System.Serializable]
+    public class AnimatorControllerReference : ValueReference<AnimatorController, AnimationControllerVariable>
     {
-        // No additional members are defined in this class.
-        // All functionality is provided by the base class ValueAsset<T>.
+        /// <summary>
+        /// Default constructor for the AnimationClipReference class.
+        /// </summary>
+        public AnimatorControllerReference()
+        {
+        }
+
+        /// <summary>
+        /// Overloaded constructor for the AnimationClipReference class.
+        /// </summary>
+        /// <param name="value">The AnimationClip value to initialize the AnimationClipReference with.</param>
+        public AnimatorControllerReference(AnimatorController value) : base(value)
+        {
+        }
     }
 }

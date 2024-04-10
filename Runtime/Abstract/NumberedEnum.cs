@@ -24,23 +24,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // ----------------------------------------------------------------------------
-
-using ScriptableArchitect.Variables;
-using UnityEditor;
-
 // ReSharper disable once CheckNamespace
-namespace ScriptableArchitect.Editor
+namespace ScriptableArchitect.Variables
 {
-    /// <summary>
-    /// A custom property drawer for QuaternionReference.
-    /// </summary>
-    /// <remarks>
-    /// This class inherits from the <see cref="ScriptableArchitect.Editor.ReferenceDrawer"/> class and is used to create a custom property drawer for QuaternionReference.
-    /// The [CustomPropertyDrawer(typeof(QuaternionReference))] attribute indicates that this drawer is used for QuaternionReference properties.
-    /// </remarks>
-    /// <seealso cref="ScriptableArchitect.Editor.ReferenceDrawer"/>
-    [CustomPropertyDrawer(typeof(QuaternionReference))]
-    public class QuaternionReferenceDrawer : ReferenceDrawer
+    public enum NumberedEnum
     {
+        One = 1,
+        Two = 2,
+        Three = 3,
+        Four = 4,
+        Five = 5,
+        Six = 6,
+        Seven = 7,
+        Eight = 8,
+        Nine = 9,
+        Ten = 10,
+        Eleven = 11,
+        Twelve = 12,
+        Thirteen = 13,
+        Fourteen = 14,
+        Fifteen = 15,
+        Sixteen = 16,
+        Seventeen = 17,
+        Eighteen = 18,
+        Nineteen = 19,
+        Twenty = 20,
+        TwentyOne = 21
     }
 }

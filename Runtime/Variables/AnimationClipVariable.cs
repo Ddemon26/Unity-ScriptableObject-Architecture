@@ -24,34 +24,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // ----------------------------------------------------------------------------
-
 using UnityEngine;
-
 // ReSharper disable once CheckNamespace
 namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// Represents a reference to a Rect value, which can be stored in a RectVariable asset.
+    /// This class represents an AnimationClip variable that can be created as a ScriptableObject.
+    /// Inherits from the <see cref="ValueAsset{T}"/> class with <see cref="AnimationClip"/> as the type parameter.
     /// </summary>
-    [System.Serializable]
-    public class RectReference : ValueReference<Rect, RectVariable>
+    /// <remarks>
+    /// This class is used to create an AnimationClip variable that can be saved as a ScriptableObject in Unity.
+    /// This allows for easy management and reuse of AnimationClip values across different scripts and scenes.
+    /// </remarks>
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Animation/AnimationVariable")]
+    public class AnimationClipVariable : ValueAsset<AnimationClip>
     {
-        /// <summary>
-        /// Default constructor for RectReference.
-        /// </summary>
-        public RectReference()
-        {
-        }
-
-        /// <summary>
-        /// Constructor that sets the constant Rect value.
-        /// </summary>
-        /// <param name="value">The constant Rect value to set.</param>
-        /// <remarks>
-        /// This constructor allows you to create a new instance of <see cref="RectReference"/> with a specific value.
-        /// </remarks>
-        public RectReference(Rect value) : base(value)
-        {
-        }
     }
 }

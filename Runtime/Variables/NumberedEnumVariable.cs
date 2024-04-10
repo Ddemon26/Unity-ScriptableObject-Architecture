@@ -25,33 +25,21 @@
 // SOFTWARE.
 // ----------------------------------------------------------------------------
 
+using System;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
 namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// Represents a reference to a LayerMask value, which can be stored in a LayerMaskVariable asset.
+    /// This class is used to reference a NumberedEnum, which can be either a constant or a variable.
     /// </summary>
-    [System.Serializable]
-    public class LayerMaskReference : ValueReference<LayerMask, LayerMaskVariable>
+    [CreateAssetMenu(menuName = "ScriptableArchitect/Variables/NumberedEnumVariable")]
+    public class NumberedEnumVariable : ValueAsset<NumberedEnum>
     {
-        /// <summary>
-        /// Default constructor for LayerMaskReference.
-        /// </summary>
-        public LayerMaskReference()
+        private void Awake()
         {
-        }
-
-        /// <summary>
-        /// Constructor that sets the constant LayerMask value.
-        /// </summary>
-        /// <param name="value">The constant LayerMask value to set.</param>
-        /// <remarks>
-        /// This constructor allows you to create a new instance of <see cref="LayerMaskReference"/> with a specific value.
-        /// </remarks>
-        public LayerMaskReference(LayerMask value) : base(value)
-        {
+            Value = NumberedEnum.One;
         }
     }
 }
