@@ -24,32 +24,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // ----------------------------------------------------------------------------
+
 using UnityEngine;
 
-/// <summary>
-/// This class is used to create a slider with a minimum and maximum value in the Unity inspector.
-/// </summary>
 // ReSharper disable once CheckNamespace
-public class MinMaxSliderAttribute : PropertyAttribute
+namespace ScriptableArchitect.Variables
 {
     /// <summary>
-    /// The minimum value of the slider.
+    /// This class is used to create a slider with a minimum and maximum value in the Unity inspector.
     /// </summary>
-    public float Min { get; private set; }
-
-    /// <summary>
-    /// The maximum value of the slider.
-    /// </summary>
-    public float Max { get; private set; }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MinMaxSliderAttribute"/> class.
-    /// </summary>
-    /// <param name="min">The minimum value of the slider.</param>
-    /// <param name="max">The maximum value of the slider.</param>
-    public MinMaxSliderAttribute(float min, float max)
+    public class MinMaxSliderAttribute : PropertyAttribute
     {
-        Min = min;
-        Max = max;
+        /// <summary>
+        /// The minimum value of the slider.
+        /// </summary>
+        public float Min { get; private set; }
+
+        /// <summary>
+        /// The maximum value of the slider.
+        /// </summary>
+        public float Max { get; private set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MinMaxSliderAttribute"/> class.
+        /// </summary>
+        /// <param name="min">The minimum value of the slider.</param>
+        /// <param name="max">The maximum value of the slider.</param>
+        public MinMaxSliderAttribute(float min, float max)
+        {
+            Min = min;
+            Max = max;
+        }
     }
 }
