@@ -25,7 +25,6 @@
 // SOFTWARE.
 // ----------------------------------------------------------------------------
 
-using System;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
